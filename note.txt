@@ -1,0 +1,8 @@
+ng new <project-name>	Create a new Angular project
+ng serve	            Run the app in development mode (default: http://localhost:4200)
+ng serve -o            	Run the app and open it in your default browser
+ng build	            Build the project for production
+ng build --watch	    Watch for file changes and rebuild automatically
+ng test	                Run unit tests using Karma
+ng lint	                Lint your project code using TSLint
+ng e2e	                Run end-to-end tests (Protractor)

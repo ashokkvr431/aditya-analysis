@@ -1,0 +1,28 @@
+<div *ngIf="student" class="container mt-4">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <h2 class="mb-0">Welcome, {{ student.stdName }}</h2>
+    </div>
+    <div class="card-body">
+      <p><strong>Email:</strong> {{ student.stdEmail }}</p>
+      <p><strong>Mobile:</strong> {{ student.stdMobileNo }}</p>
+      <p><strong>Campus:</strong> {{ student.stdCampus }}</p>
+
+      <div *ngFor="let course of student.stdCourse" class="mt-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">{{ course.name }}</h5>
+            <img [src]="course.icon" alt="{{ course.name }}" width="100" class="img-fluid mb-2" />
+            <ul class="list-group">
+              <li *ngFor="let qtype of course.questiontype" class="list-group-item">
+                {{ qtype.typename }}: 
+                <span class="text-success">+{{ qtype.positive }}</span>, 
+                <span class="text-danger">{{ qtype.nagetive }} for wrong</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

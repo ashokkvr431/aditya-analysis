@@ -1,0 +1,29 @@
+<div id="registration-form" class="container mt-5">
+  <div class="card shadow-lg p-4 rounded">
+    <h2 class="text-center mb-4">Registration Form</h2>
+    <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+      
+      <div class="mb-3">
+        <label class="form-label">Full Name</label>
+        <input type="text" class="form-control" name="fullName" ngModel required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Email address</label>
+        <input type="email" class="form-control" name="email" ngModel required email>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" ngModel required minlength="6">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" name="confirmPassword" ngModel required>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100" [disabled]="!registerForm.valid">Register</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="login-container">
+  <div class="login-box">  
+    <div class="right-panel">
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <h2>Login</h2>
+
+        <label>Student Unique Code</label>
+        <input [(ngModel)]="suc" formControlName="suc" type="text" placeholder="Enter SUC" required />
+        <a class="help-link" href="#">Where to find SUC?</a>
+
+        <label>Password</label>
+        <input [(ngModel)]="password" formControlName="password" type="password" placeholder="Enter Password" required />
+        <a class="help-link" href="#">Forgot Password?</a>
+
+        <!-- <button type="submit" [disabled]="loginForm.invalid">Login</button> -->
+        <button type="submit" (click)="onLogin()">Login</button>
+
+        <a class="register-link" routerLink="/registration">I don't have an account?</a>
+        <div *ngIf="errorMsg" class="error-msg">{{ errorMsg }}
+      </div>
+      </form>
+    </div>
+    
+  </div>
+</div>
